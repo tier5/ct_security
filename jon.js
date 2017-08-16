@@ -45,6 +45,8 @@ app.post('/updatevisitor', routes.visitors.updatevisitor);
 app.get('/findvisitor/:id', routes.visitors.findvisitor);
 app.get('/visitordata/:id', routes.visitors.visitordata);
 app.delete('/delete', routes.visitors.delete);
+// get all visitors for admin
+app.get('/allvisitor', routes.visitors.getall);
 
 
 

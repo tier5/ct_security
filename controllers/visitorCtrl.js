@@ -2,46 +2,41 @@
 app.controller('visitorCtrl',function($scope,$http,$location,$state, $stateParams,$cookieStore)
 {
   
- var urlpath= $location.path().split('/');
+  var urlpath= $location.path().split('/');
   var id=urlpath[3];
     //alert(id);
-var getvisitor = function(){
-  $http.get(baseUrl+'/visitordata/'+id).success(
-  function(response){
-    $scope.visitor = {};
-  $scope.visitor = response.data;
-  console.log(response);
-  });
-    
-};
-getvisitor();
+  var getvisitor = function(){
+    $http.get(baseUrl+'/visitordata/'+id).success(
+    function(response){
+      $scope.visitor = {};
+    $scope.visitor = response.data;
+    console.log(response);
+    });
+      
+  };
+  getvisitor();
 
-$scope.get = function(){
-          $scope.dataSize= $('.rLength').text();
-           console.log($scope.dataSize)
-            return $scope.dataSize;       
-};
-$scope.ser = function(){
-        console.log("in src");
-         $scope.currentPage = 0 ;     
-};
+  $scope.get = function(){
+            $scope.dataSize= $('.rLength').text();
+             console.log($scope.dataSize)
+              return $scope.dataSize;       
+  };
+  $scope.ser = function(){
+          console.log("in src");
+           $scope.currentPage = 0 ;     
+  };
 
-    $scope.currentPage = 0;
-    $scope.pageSize = 10;
-    $scope.q = '';
-    
+  $scope.currentPage = 0;
+  $scope.pageSize = 10;
+  $scope.q = '';
+  
 
-    //console.log($scope.results.length)
-    $scope.numberOfPages=function(){
-        var nop =Math.ceil($scope.get()/$scope.pageSize);  
-        
-        return nop;              
-    }
-
-
-
-
-
+  //console.log($scope.results.length)
+  $scope.numberOfPages=function(){
+      var nop =Math.ceil($scope.get()/$scope.pageSize);  
+      
+      return nop;              
+  }
 
 });
 
@@ -68,35 +63,46 @@ userscount();
 
 app.controller('visitorsCtrl',function($scope,$http,$location,$state, $stateParams,$cookieStore)
 {
-
-   $scope.dateFrom=new Date(2017,07,01);
+  $scope.dateFrom=new Date(2017,07,01);
   $scope.dateTo=new Date();
-//console.log("editUser");
-var editData=function()
-{
+  //console.log("editUser");
+
   var urlpath= $location.path().split('/');
   var id=urlpath[3];
-    //alert(id);
- 
-$http.get(baseUrl+'/findvisitor/'+id).success(function(response)
-     {
-    // console.log(response);
+  
+  $scope.editData = function() {
+    $http.get(baseUrl+'/findvisitor/'+id).success(function(response) {
+      // console.log(response);
    
      $scope.visitor = {};
      $scope.visitors=response.data;
      console.log($scope.visitors);
-     });
+    });
+  }
+
+  $scope.getall = function(){
+    $http.get(baseUrl+'/allvisitor').success(function(response){
+      $scope.visitors = {};
+      $scope.visitors = response.data;
+      console.log(response);
+    });
+      
+  };
+
+  // if user id present in url then get visitors related to that user id
+  // else get all visitors
+  if(id) {
+    $scope.editData();
+  } else {
+    $scope.getall();
+  }
+
+
+  $scope.find = function(item){
     
-  
-}
-editData();
+    return  item.location == '' &&  item.checkindate == '' ;// item.location == $scope.r && item.checkindate == $scope.s ||
 
-
- $scope.find = function(item){
-  
-  return  item.location == '' &&  item.checkindate == '' ;// item.location == $scope.r && item.checkindate == $scope.s ||
-
-};
+  };
 
 // $scope.updateuser=function(){
 //   console.log("updateing data"+JSON.stringify($scope.user));

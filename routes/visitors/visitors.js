@@ -19,13 +19,13 @@ exports.addvisitors = function (req, res) {
     var date=Date.now();
     var file=date+'.jpg'
     fs.writeFile(__dirname + '/../../public/uploads/'+file, imageBuffer.data);
-    var filedir = "http://104.236.67.117:2000/public/uploads/" +file;
+    var filedir = baseUrl+"/public/uploads/" +file;
 
     var imageBuffer1 = decodeBase64Image(req.body.file);
     var date1=Date.now();
     var file1=date1+'.jpg'
     fs.writeFile(__dirname + '/../../public/uploads/'+file1, imageBuffer.data);
-    var filedir1 = "http://104.236.67.117:2000/public/uploads/" +file1;
+    var filedir1 = baseUrl+"/public/uploads/" +file1;
 
 
     var newvisitor=new db.visitorModel({name:req.body.name,company_name:req.body.company_name,location:req.body.location,licence_plate:req.body.licence_plate,checkintime:req.body.checkintime,checkindate:req.body.checkindate,security_id:req.body.security_id,visitor_image:filedir,file:filedir1,checkoutdate:"in"})
@@ -71,19 +71,21 @@ exports.updatevisitor = function(req, res, next) {
   };
 
   exports.findvisitor = function(req, res, next) {
-   //var id = req.params.id;
-   db.visitorModel.find({security_id:req.params.id,checkoutdate:"in"}, function (err, doc) {  
-    if (err) {
-        res.json(err)
-    }
-    if (doc) {
-        var message = JSON.parse('{"status":"success","data":' + JSON.stringify(doc) + '}');
-        res.send(message);
-    } else {
-        res.json("No record found with that ID")
-    }
-      });
-}
+    //var id = req.params.id;
+    // db.visitorModel.find({security_id:req.params.id,checkoutdate:"in"}, function (err, doc) {
+    db.visitorModel.find({security_id:req.params.id}, function (err, doc) {
+
+      if (err) {
+          res.json(err)
+      }
+      if (doc) {
+          var message = JSON.parse('{"status":"success","data":' + JSON.stringify(doc) + '}');
+          res.send(message);
+      } else {
+          res.json("No record found with that ID")
+      }
+    });
+  }
 
 
   exports.visitordata = function(req, res, next) {
@@ -115,4 +117,22 @@ exports.delete = function(req, res, next) {
   });
  
 };
+
+exports.getall = function(req, res, next) {
+  // var id = req.params.id;
+  db.visitorModel.find({}, function (err, doc) {
+
+      if (err) {
+          res.json(err)
+      }
+      if (doc) {
+          var message = JSON.parse('{"status":"success","data":' + JSON.stringify(doc) + '}');
+          res.send(message);
+      } else {
+          res.json("No record found with that ID")
+      }
+  });
+ 
+};
+
 

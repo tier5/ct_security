@@ -1,5 +1,6 @@
 var app = angular.module('App', ['ui.router','ngCookies','naif.base64','ngStorage']);
-var baseUrl="http://104.236.67.117:2000";
+//var baseUrl="http://104.236.67.117:2000";
+var baseUrl="http://localhost:2000";
 
 		                
 /**
@@ -64,24 +65,30 @@ var baseUrl="http://104.236.67.117:2000";
                       , controller: 'userDelCtrl'
                   })
 /////////////////////////Notifications
-				 .state('admin.Visitors', {
-                     url: '/Visitors/:id'
-                      , templateUrl: 'views/visitors.html'
-                      , controller: 'visitorsCtrl'
-                  })
+				.state('admin.Visitors', {
+           url: '/Visitors/:id'
+            , templateUrl: 'views/visitors.html'
+            , controller: 'visitorsCtrl'
+        })
 
 
-                  .state('admin.Visitor', {
-                     url: '/Visitor/:id'  
-                      , templateUrl: 'views/visitor.html'
-                      , controller: 'visitorCtrl'
-                  })
-				 // .state('admin.Delete', {
-     //                 url: '/Delete'
-     //                  , templateUrl: 'views/visitors.html'
-     //                  , controller: 'visitorDelCtrl'
-     //              })
+        .state('admin.Visitor', {
+           url: '/Visitor/:id'  
+            , templateUrl: 'views/visitor.html'
+            , controller: 'visitorCtrl'
+        })
+			  // .state('admin.Delete', {
+        //                 url: '/Delete'
+        //                  , templateUrl: 'views/visitors.html'
+        //                  , controller: 'visitorDelCtrl'
+        //              })
 
+        //this state is to show all visitors to admin
+        .state('admin.AllVisitor', {
+           url: '/AllVisitor'
+            , templateUrl: 'views/visitors.html'
+            , controller: 'visitorsCtrl'
+        })
 
 				
 				$urlRouterProvider.otherwise('/login');
