@@ -1,0 +1,134 @@
+      
+                              
+<div class="col-md-10 col-sm-9 col-xs-12 dashboard_right">       
+                	<div class="row row_wrap">
+                    	
+                    	<div class="col-md-12 col-sm-12 col-xs-12 homeblg">
+                        
+                        	<ul>
+                            	<li><a href="#/admin/dashboard"><span><img src="images/homeicon_03.png" alt="" class="img-responsive"></span> Home</a></li>
+                                <li>User Management</li>
+                            </ul>
+                        </div><!--homeblg-->
+                    </div><!--row_wrap-->
+                    
+                   
+                <div class="row row_wrap marginblg">
+                <h3>Users Info</h3>
+                        <div class="row row_wrap">
+                        	<!-- <div class="col-md-6 col-sm-6 col-xs-6 recordblg">
+                                <select ng-model="pageSize" id="pageSize" class="form-control">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                 </select>
+                                <span>records per page</span>
+                            </div --><!--recordblg-->
+                            <div class="col-md-6 col-sm-6 col-xs-6 dashsearchblg" style="float:right;">
+                                <b> Search:</b>
+                                <input ng-model="q" class="form-control" style="width:50%;display:inline-block; placeholder="Filter text">
+                            </div><!--dashsearchblg-->
+                        </div><!--row_wrap-->
+                	<div class="paddingblg table-responsive ">
+                    	<table class="table table-condensed basictableblg" style="vertical-align:middle;" >
+                        	<tr style="background:#fff">
+                            	<th>
+                                	 #
+                                </th>
+                                <th>
+                                	UserName
+                                </th>
+                                <th>
+                                	Email	
+                                </th>
+                                <th>
+                                	Location
+                                </th>
+                               
+                                <th>
+                                Actions
+                                </th>
+                                
+                            </tr>
+                           <!--  <tr ng-repeat=" username in users | filter:q  as results"> </tr>
+                            <td ng-hide="true" > <p class="rLength" >{{results.length}}</p> </td> -->
+                          
+
+                            <tr ng-repeat="user in users | filter:q ">
+                          
+                            	<td style="padding: 8px 2% 0 ">
+                                	{{$index + 1}}
+                                </td>
+                                <td>
+                                	<a href="#/admin/Visitors/{{user._id}}">{{user.username}}</a>
+                                </td>
+                                <td>
+                                	{{user.email}}
+                                </td>
+                                <td>
+                                	{{user.location}}
+                                </td>
+                               
+                                
+                                <td>                                	
+                                    <a href="#/admin/User/{{user._id}}" style=" color:#333;font-size: 17px;"><span><i class="fa fa-eye" aria-hidden="true"></i></span></a>
+                                    <a href="#/admin/EditUser/{{user._id}}" style=" color:#333;font-size: 17px;"><span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span></a>
+                                     <a href="#/admin/DeleteUser/{{user._id}}" style=" color:#333;font-size: 17px;"><span><i class="fa fa-trash" aria-hidden="true"></i></span></a>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                      <a href="#/admin/addusers"> <button class="btn btn-default addbtn"> ADD</button> </a>
+                        <div class="clear_fix"></div>
+                    </div>
+                </div><!--row_wrap-->
+                
+                
+                <div class="row row_wrap marginblg2">
+                	<div class="col-md-12 col-sm-12 col-xs-12 pagesblg">
+                    	<div class="row row_wrap">
+                        	<div class="col-md-6 col-sm-6 col-xs-12 pageblg_left">
+                            	<!-- <p>Showing 1 to 1 of 1 entries</p> -->
+                            </div><!--pageblg_left-->
+                            <div class="col-md-6 col-sm-6 col-xs-12 pageblg_right">
+                            	<!-- <nav aria-label="Page navigation">
+                                    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                                    Previous
+                                </button>
+                                {{currentPage+1}}/{{numberOfPages()}}
+                                <button ng-disabled="currentPage >= get()/pageSize - 1" ng-click="currentPage=currentPage+1">
+                                    Next
+                                </button> -->
+                                    <!-- <ul class="pagination paginationblg">
+                                      <li>
+                                        <a href="#" aria-label="Previous">
+                                          <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                      </li>
+                                      <li><a href="#">1</a></li>
+                                      <li><a href="#">2</a></li>
+                                      <li><a href="#">3</a></li>
+                                      <li><a href="#">4</a></li>
+                                      <li><a href="#">5</a></li>
+                                      <li>
+                                        <a href="#" aria-label="Next">
+                                          <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                      </li>
+                                    </ul> -->
+                                </nav>
+                            </div><!--pageblg_right-->
+                        </div><!--row_wrap-->
+                    </div><!--pagesblg-->
+                </div><!--row_wrap-->
+               
+                
+            	
+                
+                </div><!--dashboard_right-->
+            
+            	
+            
+            </div><!--row_wrap-->
+            

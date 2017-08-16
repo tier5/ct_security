@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADMIN PANEL</title>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<![end if]-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/style.css">
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"> 
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<div class="container-fluid dashboardheader">
+    <div class="row row_wrap">
+        <div class="col-md-12 col-sm-12 col-xs-12 dashbrdhedrblg">
+            <div class="row row_wrap">
+                <div class="col-md-2 col-sm-3 col-xs-12 dashboardsearch">
+                    <a href="#"><b><img src="images/admin-logo-dark.png" alt="" class="img-responsive"></b><i><img src="images/logo1.png" alt="" class="img-responsive"></i></a>
+                </div><!--dashboardsearch-->
+                <div style=" background-color:#2f323e;">
+                <div class="col-md-10  col-sm-9  col-xs-12 dashboardlogoutblg" align="right">
+                    <div class="row row_wrap">
+                        <!--<div class="col-md-4 col-sm-4 col-xs-4 settingblg borderblg">
+                            <img src="images/dashboardlogouticons_03.png" alt="" class="img-responsive">
+                            <p><a href="#" style="color:#fff">Settings</a></p>
+                        </div><!--settingblg-->
+                        <div class="col-md-11 col-sm-10 col-xs-6 lockblg borderblg">
+                            <!--<img src="images/dashboardlogouticons_05.png" alt="" class="img-responsive">-->
+                             <a href="profile.html" style="color:#fff"> <span style="color:#fff">
+</span>
+                            </a>
+                        </div><!--lockblg-->
+                        <div class="col-md-1 col-sm-2 col-xs-6 logoutblg borderblg" align="right">
+                            <!--<img src="images/dashboardlogouticons_07.png" alt="" class="img-responsive">-->
+                           <a href="#" style="color:#fff"> <span style="color:#fff"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+                            Logout</a>
+                        </div><!--logoutblg-->
+                    </div><!--row_wrap-->
+                </div><!--dashboardlogoutblg-->
+                </div>
+            </div><!--row_wrap-->
+        </div><!--dashbrdhedrblg-->
+    </div><!--row_wrap-->
+</div><!--dashboardheader-->
+
+<div class="container-fluid dashboardbg">
+    <div class="row row_wrap">
+    
+        <div class="col-md-12 col-sm-12 col-xs-12 dashboardblg">
+        
+            <div class="row row_wrap">
+                <div class="panel-group col-md-2 col-sm-3 col-xs-12 dashboard_left" id="accordion" role="tablist" aria-multiselectable="true">
+
+
+  <div class="panel panel-default dashboardpanel">
+    <div class="panel-heading dashboardheading" role="tab" id="headingOne">
+    <a role="button" data-toggle="collapse" data-parent="#accordion" href="dashboard.html" aria-expanded="true" aria-controls="collapseOne" class="dashboardcollapse">
+      <a href="#/admin/dashboard"><h4 class="panel-title">        
+         <span><img src="images/dashboardnavicons_03.png" alt="" class="img-responsive"></span>Dashboard      
+      </h4></a>
+       </a>
+    </div>
+    
+  </div>
+ 
+
+  
+  <div class="panel panel-default dashboardpanel">
+    <div class="panel-heading dashboardheading" role="tab" id="headingthree">
+    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsethree" aria-expanded="true" aria-controls="collapseOne" class="dashboardcollapse">
+     <a href="#/admin/Users"><h4 class="panel-title">        
+         <span><img src="images/dashboardnavicons_03.png" alt="" class="img-responsive"></span>User Management       
+      </h4></a>
+       </a>
+    </div>
+    
+  </div>
+  
+  
+  
+</div><!--dashboard_left-->
+                
+              
+<div ui-view >
+
+</div>
+
+
+  
+                
+             
+            
+        </div><!--dashboardblg-->
+        
+    </div><!--row_wrap-->
+
+        
+</div><!--dashboardbg-->
+
+
+

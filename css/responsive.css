@@ -1,0 +1,135 @@
+
+
+@charset "utf-8";
+/* CSS Document */
+
+/*------------------------------
+ MEDIUM DEVICES
+------------------------------*/
+@media screen and (max-width:1280px)
+{
+/*======================dashboardpage================*/
+.taskblog_left p		{ font-size:13px;}
+}
+
+
+@media (min-width:992px) and (max-width:1199px)
+{
+.site_container{ max-width:98%; margin:0 1%;}	
+/*======================dashboardpage================*/
+.taskblog_left p		{ font-size:12px;}
+.dashboard_left p		{ font-size:12px;}
+.dashboard_left > ul > li > a{ font-size:12px;}
+ 
+}
+
+/*------------------------------
+ SMALL DEVICES
+------------------------------*/
+
+@media (min-width:768px) and (max-width:991px) 
+{
+.site_container{ max-width:98%; margin:0 1%;}
+/*======================dashboardpage================*/
+
+.taskbg			{ margin-bottom:15px;}
+
+
+}
+
+@media (max-width:800px)
+{
+.dashsearchblg input[type="text"]{ max-width:175px;}
+}
+/*------------------------------
+ EXTRA SMALL DEVICES
+------------------------------*/
+
+@media (max-width:767px)
+{
+.site_container{ max-width:98%; margin:0 1%;}
+/*======================dashboardpage================*/
+.serchtxt			{ margin:auto;}
+.lockblg			{ text-align:left;}
+/*======================dashboardpage================*/
+
+.taskbg			{ margin-bottom:15px;}
+.pageblg_left	{}
+.pageblg_left p	{ float:none !important; text-align:center;}
+.pageblg_right	{ text-align:center; margin-top:10px;}
+.pagesblg 		{ padding: 0 0 10px;}
+ 
+}
+
+
+/*------------------------------
+ PHONES 640px width
+------------------------------*/
+
+@media (max-width:640px)
+{
+
+}
+
+/*------------------------------
+ PHONES 548px width
+------------------------------*/
+
+@media (max-width:600px) {
+ 
+ 
+
+
+}
+/*------------------------------
+ PHONES 548px width
+------------------------------*/
+
+@media (max-width:548px)
+{
+ 
+ 
+}
+
+
+@media (max-width:548px)
+{
+.taskbg {  clear: both;  float: none;  margin: 0 auto 15px;  max-width: 300px;  width: 100%;} 
+.recordblg{ width:100%; text-align:center;}
+.dashsearchblg	{ width:100%;text-align:center;}
+ 
+}
+
+
+/*------------------------------
+ PHONES 480px width
+------------------------------*/
+
+@media (max-width:480px) 
+{
+
+}
+
+@media (max-width:425px) 
+{
+.loginblg p		{ font-size:16px;}
+}
+
+/*------------------------------
+ PHONES 320px width
+------------------------------*/
+@media (max-width:390px)
+{
+.footerblg p		{ font-size:12px;}	 
+}
+
+@media (max-width:360px)
+{
+
+}
+@media (max-width:320px)
+{
+ 
+ 
+}
+
